@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>bMiscUnsafe.TestsSkipLocalsInit-20230817-142705</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet v0.13.7, Windows 10 (10.0.19045.3324/22H2/2022Update)
+Intel Core i7-9750H CPU 2.60GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK 7.0.201
+  [Host]     : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2 [AttachedDebugger]
+  DefaultJob : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>   Method</th><th>Size</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Rank</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>tMethodNoInit</td><td>0</td><td>2.091 ns</td><td>0.0352 ns</td><td>0.0312 ns</td><td>1</td><td>-</td>
+</tr><tr><td>tMethodWithInit</td><td>0</td><td>2.053 ns</td><td>0.0283 ns</td><td>0.0251 ns</td><td>1</td><td>-</td>
+</tr><tr><td>tMethodNoInit</td><td>10</td><td>8.523 ns</td><td>0.1787 ns</td><td>0.1672 ns</td><td>2</td><td>-</td>
+</tr><tr><td>tMethodWithInit</td><td>10</td><td>9.077 ns</td><td>0.1445 ns</td><td>0.1352 ns</td><td>3</td><td>-</td>
+</tr><tr><td>tMethodNoInit</td><td>64</td><td>38.207 ns</td><td>0.3310 ns</td><td>0.2935 ns</td><td>4</td><td>-</td>
+</tr><tr><td>tMethodWithInit</td><td>64</td><td>42.665 ns</td><td>0.5055 ns</td><td>0.4729 ns</td><td>5</td><td>-</td>
+</tr><tr><td>tMethodNoInit</td><td>255</td><td>169.042 ns</td><td>0.8071 ns</td><td>0.7155 ns</td><td>6</td><td>-</td>
+</tr><tr><td>tMethodWithInit</td><td>255</td><td>193.427 ns</td><td>1.3279 ns</td><td>1.1089 ns</td><td>7</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,78 @@
+``` ini
+
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-9750H CPU 2.60GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.201
+  [Host]     : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2
+
+
+```
+|                              Method | ItemCount |           Mean |       Error |        StdDev | Rank | Allocated |
+|------------------------------------ |---------- |---------------:|------------:|--------------:|-----:|----------:|
+|                      **list_NoOpt_For** |        **10** |      **46.414 ns** |   **0.9266 ns** |     **2.1289 ns** |   **16** |         **-** |
+|             list_NoOpt_For_LenCache |        10 |      32.033 ns |   0.2533 ns |     0.2370 ns |   12 |         - |
+|       list_NoOpt_For_LenCacheGlobal |        10 |      33.236 ns |   0.6018 ns |     0.5630 ns |   13 |         - |
+|                  list_NoOpt_Foreach |        10 |      64.295 ns |   0.8728 ns |     0.8164 ns |   20 |         - |
+|  list_NoOpt_Foreach_EnumeratorCache |        10 |     127.821 ns |   0.7198 ns |     0.6010 ns |   23 |         - |
+|                            list_For |        10 |       8.330 ns |   0.1879 ns |     0.2164 ns |    6 |         - |
+|                   list_For_LenCache |        10 |       7.971 ns |   0.0639 ns |     0.0567 ns |    5 |         - |
+|             list_For_LenCacheGlobal |        10 |       7.890 ns |   0.1564 ns |     0.1463 ns |    5 |         - |
+|                        list_Foreach |        10 |      10.246 ns |   0.1149 ns |     0.0960 ns |    7 |         - |
+|        list_Foreach_EnumeratorCache |        10 |     111.076 ns |   0.6391 ns |     0.5666 ns |   22 |         - |
+|                     array_NoOpt_For |        10 |      24.953 ns |   0.4422 ns |     0.3920 ns |    9 |         - |
+|            array_NoOpt_For_LenCache |        10 |      23.325 ns |   0.2125 ns |     0.1988 ns |    8 |         - |
+|      array_NoOpt_For_LenCacheGlobal |        10 |      23.697 ns |   0.2484 ns |     0.2202 ns |    8 |         - |
+|                 array_NoOpt_Foreach |        10 |      26.055 ns |   0.4513 ns |     0.3768 ns |   10 |         - |
+| array_NoOpt_Foreach_EnumeratorCache |        10 |      52.852 ns |   0.2597 ns |     0.2302 ns |   17 |         - |
+|                           array_For |        10 |       6.365 ns |   0.0929 ns |     0.0824 ns |    4 |         - |
+|                  array_For_LenCache |        10 |       5.566 ns |   0.0428 ns |     0.0379 ns |    2 |         - |
+|            array_For_LenCacheGlobal |        10 |       5.804 ns |   0.0797 ns |     0.0706 ns |    3 |         - |
+|                       array_Foreach |        10 |       3.594 ns |   0.0514 ns |     0.0481 ns |    1 |         - |
+|       array_Foreach_EnumeratorCache |        10 |      44.354 ns |   0.5877 ns |     0.5498 ns |   15 |         - |
+|    array_NoOpt_UnsafePtrArithmetics |        10 |      29.189 ns |   0.6035 ns |     0.5645 ns |   11 |         - |
+|          array_UnsafePtrArithmetics |        10 |       5.615 ns |   0.0595 ns |     0.0528 ns |    2 |         - |
+|                      **list_NoOpt_For** |       **100** |     **519.089 ns** |   **4.3599 ns** |     **3.6407 ns** |   **31** |         **-** |
+|             list_NoOpt_For_LenCache |       100 |     301.339 ns |   5.6700 ns |     5.0263 ns |   27 |         - |
+|       list_NoOpt_For_LenCacheGlobal |       100 |     316.648 ns |   5.2477 ns |     4.9087 ns |   28 |         - |
+|                  list_NoOpt_Foreach |       100 |     559.672 ns |   4.7072 ns |     4.4031 ns |   32 |         - |
+|  list_NoOpt_Foreach_EnumeratorCache |       100 |   1,070.534 ns |  11.4132 ns |    10.6759 ns |   34 |         - |
+|                            list_For |       100 |      71.413 ns |   0.9305 ns |     0.8248 ns |   21 |         - |
+|                   list_For_LenCache |       100 |      71.169 ns |   1.1485 ns |     1.0182 ns |   21 |         - |
+|             list_For_LenCacheGlobal |       100 |      70.538 ns |   0.5996 ns |     0.5609 ns |   21 |         - |
+|                        list_Foreach |       100 |     110.300 ns |   1.0424 ns |     0.8705 ns |   22 |         - |
+|        list_Foreach_EnumeratorCache |       100 |     975.154 ns |  17.8248 ns |    17.5064 ns |   33 |         - |
+|                     array_NoOpt_For |       100 |     251.478 ns |   1.9726 ns |     1.8451 ns |   26 |         - |
+|            array_NoOpt_For_LenCache |       100 |     229.885 ns |   2.9205 ns |     2.5889 ns |   25 |         - |
+|      array_NoOpt_For_LenCacheGlobal |       100 |     231.753 ns |   4.2214 ns |     3.9487 ns |   25 |         - |
+|                 array_NoOpt_Foreach |       100 |     251.602 ns |   4.0919 ns |     3.8276 ns |   26 |         - |
+| array_NoOpt_Foreach_EnumeratorCache |       100 |     500.243 ns |   3.5165 ns |     2.7454 ns |   30 |         - |
+|                           array_For |       100 |      59.575 ns |   0.3429 ns |     0.3040 ns |   19 |         - |
+|                  array_For_LenCache |       100 |      57.369 ns |   0.3606 ns |     0.3373 ns |   18 |         - |
+|            array_For_LenCacheGlobal |       100 |      57.074 ns |   0.6792 ns |     0.6353 ns |   18 |         - |
+|                       array_Foreach |       100 |      38.979 ns |   0.2857 ns |     0.2532 ns |   14 |         - |
+|       array_Foreach_EnumeratorCache |       100 |     424.970 ns |   6.0725 ns |     5.6802 ns |   29 |         - |
+|    array_NoOpt_UnsafePtrArithmetics |       100 |     224.489 ns |   2.1255 ns |     1.8842 ns |   24 |         - |
+|          array_UnsafePtrArithmetics |       100 |      44.753 ns |   0.3402 ns |     0.2841 ns |   15 |         - |
+|                      **list_NoOpt_For** |     **10000** |  **45,229.571 ns** | **471.9926 ns** |   **394.1352 ns** |   **46** |         **-** |
+|             list_NoOpt_For_LenCache |     10000 |  32,427.660 ns | 291.3588 ns |   258.2820 ns |   43 |         - |
+|       list_NoOpt_For_LenCacheGlobal |     10000 |  34,116.665 ns | 362.8374 ns |   339.3983 ns |   44 |         - |
+|                  list_NoOpt_Foreach |     10000 |  59,064.809 ns | 325.4560 ns |   288.5083 ns |   48 |         - |
+|  list_NoOpt_Foreach_EnumeratorCache |     10000 | 110,480.293 ns | 610.4733 ns |   509.7729 ns |   50 |         - |
+|                            list_For |     10000 |  11,415.952 ns | 225.7034 ns |   562.0798 ns |   38 |         - |
+|                   list_For_LenCache |     10000 |  11,464.024 ns | 226.7061 ns |   483.1291 ns |   38 |         - |
+|             list_For_LenCacheGlobal |     10000 |  11,371.441 ns | 223.5311 ns |   257.4187 ns |   38 |         - |
+|                        list_Foreach |     10000 |  11,840.757 ns | 235.3626 ns |   640.3212 ns |   39 |         - |
+|        list_Foreach_EnumeratorCache |     10000 |  95,036.414 ns | 803.3855 ns |   712.1803 ns |   49 |         - |
+|                     array_NoOpt_For |     10000 |  27,004.825 ns | 201.7210 ns |   178.8204 ns |   42 |         - |
+|            array_NoOpt_For_LenCache |     10000 |  25,639.702 ns | 275.0007 ns |   257.2358 ns |   41 |         - |
+|      array_NoOpt_For_LenCacheGlobal |     10000 |  25,532.264 ns | 217.8014 ns |   181.8740 ns |   41 |         - |
+|                 array_NoOpt_Foreach |     10000 |  26,657.508 ns | 270.1860 ns |   239.5129 ns |   42 |         - |
+| array_NoOpt_Foreach_EnumeratorCache |     10000 |  48,625.634 ns | 967.9225 ns | 1,258.5727 ns |   47 |         - |
+|                           array_For |     10000 |  10,795.397 ns | 203.0100 ns |   470.5067 ns |   37 |         - |
+|                  array_For_LenCache |     10000 |   9,524.573 ns | 182.6768 ns |   412.3319 ns |   36 |         - |
+|            array_For_LenCacheGlobal |     10000 |   9,433.278 ns | 186.6035 ns |   350.4866 ns |   36 |         - |
+|                       array_Foreach |     10000 |   8,932.611 ns | 174.7829 ns |   315.1696 ns |   35 |         - |
+|       array_Foreach_EnumeratorCache |     10000 |  42,072.736 ns | 502.7591 ns |   470.2812 ns |   45 |         - |
+|    array_NoOpt_UnsafePtrArithmetics |     10000 |  24,077.910 ns | 206.4453 ns |   172.3912 ns |   40 |         - |
+|          array_UnsafePtrArithmetics |     10000 |   8,974.317 ns | 179.4233 ns |   245.5966 ns |   35 |         - |

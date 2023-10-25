@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>CSharp7_benchmark_for_vs_foreach.Benchmark.ForEachVsFor-20230412-182608</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.5, OS=Windows 10 (10.0.19044.2728/21H2/November2021Update)
+Intel Core i7-9750H CPU 2.60GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.201
+  [Host]     : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.3 (7.0.323.6910), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                       Method</th><th>ItemCount</th><th>    Mean</th><th>Error</th><th> StdDev</th><th>Rank</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>list_NoOpt_For</td><td>10</td><td>46.414 ns</td><td>0.9266 ns</td><td>2.1289 ns</td><td>16</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCache</td><td>10</td><td>32.033 ns</td><td>0.2533 ns</td><td>0.2370 ns</td><td>12</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCacheGlobal</td><td>10</td><td>33.236 ns</td><td>0.6018 ns</td><td>0.5630 ns</td><td>13</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach</td><td>10</td><td>64.295 ns</td><td>0.8728 ns</td><td>0.8164 ns</td><td>20</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach_EnumeratorCache</td><td>10</td><td>127.821 ns</td><td>0.7198 ns</td><td>0.6010 ns</td><td>23</td><td>-</td>
+</tr><tr><td>list_For</td><td>10</td><td>8.330 ns</td><td>0.1879 ns</td><td>0.2164 ns</td><td>6</td><td>-</td>
+</tr><tr><td>list_For_LenCache</td><td>10</td><td>7.971 ns</td><td>0.0639 ns</td><td>0.0567 ns</td><td>5</td><td>-</td>
+</tr><tr><td>list_For_LenCacheGlobal</td><td>10</td><td>7.890 ns</td><td>0.1564 ns</td><td>0.1463 ns</td><td>5</td><td>-</td>
+</tr><tr><td>list_Foreach</td><td>10</td><td>10.246 ns</td><td>0.1149 ns</td><td>0.0960 ns</td><td>7</td><td>-</td>
+</tr><tr><td>list_Foreach_EnumeratorCache</td><td>10</td><td>111.076 ns</td><td>0.6391 ns</td><td>0.5666 ns</td><td>22</td><td>-</td>
+</tr><tr><td>array_NoOpt_For</td><td>10</td><td>24.953 ns</td><td>0.4422 ns</td><td>0.3920 ns</td><td>9</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCache</td><td>10</td><td>23.325 ns</td><td>0.2125 ns</td><td>0.1988 ns</td><td>8</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCacheGlobal</td><td>10</td><td>23.697 ns</td><td>0.2484 ns</td><td>0.2202 ns</td><td>8</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach</td><td>10</td><td>26.055 ns</td><td>0.4513 ns</td><td>0.3768 ns</td><td>10</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach_EnumeratorCache</td><td>10</td><td>52.852 ns</td><td>0.2597 ns</td><td>0.2302 ns</td><td>17</td><td>-</td>
+</tr><tr><td>array_For</td><td>10</td><td>6.365 ns</td><td>0.0929 ns</td><td>0.0824 ns</td><td>4</td><td>-</td>
+</tr><tr><td>array_For_LenCache</td><td>10</td><td>5.566 ns</td><td>0.0428 ns</td><td>0.0379 ns</td><td>2</td><td>-</td>
+</tr><tr><td>array_For_LenCacheGlobal</td><td>10</td><td>5.804 ns</td><td>0.0797 ns</td><td>0.0706 ns</td><td>3</td><td>-</td>
+</tr><tr><td>array_Foreach</td><td>10</td><td>3.594 ns</td><td>0.0514 ns</td><td>0.0481 ns</td><td>1</td><td>-</td>
+</tr><tr><td>array_Foreach_EnumeratorCache</td><td>10</td><td>44.354 ns</td><td>0.5877 ns</td><td>0.5498 ns</td><td>15</td><td>-</td>
+</tr><tr><td>array_NoOpt_UnsafePtrArithmetics</td><td>10</td><td>29.189 ns</td><td>0.6035 ns</td><td>0.5645 ns</td><td>11</td><td>-</td>
+</tr><tr><td>array_UnsafePtrArithmetics</td><td>10</td><td>5.615 ns</td><td>0.0595 ns</td><td>0.0528 ns</td><td>2</td><td>-</td>
+</tr><tr><td>list_NoOpt_For</td><td>100</td><td>519.089 ns</td><td>4.3599 ns</td><td>3.6407 ns</td><td>31</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCache</td><td>100</td><td>301.339 ns</td><td>5.6700 ns</td><td>5.0263 ns</td><td>27</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCacheGlobal</td><td>100</td><td>316.648 ns</td><td>5.2477 ns</td><td>4.9087 ns</td><td>28</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach</td><td>100</td><td>559.672 ns</td><td>4.7072 ns</td><td>4.4031 ns</td><td>32</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach_EnumeratorCache</td><td>100</td><td>1,070.534 ns</td><td>11.4132 ns</td><td>10.6759 ns</td><td>34</td><td>-</td>
+</tr><tr><td>list_For</td><td>100</td><td>71.413 ns</td><td>0.9305 ns</td><td>0.8248 ns</td><td>21</td><td>-</td>
+</tr><tr><td>list_For_LenCache</td><td>100</td><td>71.169 ns</td><td>1.1485 ns</td><td>1.0182 ns</td><td>21</td><td>-</td>
+</tr><tr><td>list_For_LenCacheGlobal</td><td>100</td><td>70.538 ns</td><td>0.5996 ns</td><td>0.5609 ns</td><td>21</td><td>-</td>
+</tr><tr><td>list_Foreach</td><td>100</td><td>110.300 ns</td><td>1.0424 ns</td><td>0.8705 ns</td><td>22</td><td>-</td>
+</tr><tr><td>list_Foreach_EnumeratorCache</td><td>100</td><td>975.154 ns</td><td>17.8248 ns</td><td>17.5064 ns</td><td>33</td><td>-</td>
+</tr><tr><td>array_NoOpt_For</td><td>100</td><td>251.478 ns</td><td>1.9726 ns</td><td>1.8451 ns</td><td>26</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCache</td><td>100</td><td>229.885 ns</td><td>2.9205 ns</td><td>2.5889 ns</td><td>25</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCacheGlobal</td><td>100</td><td>231.753 ns</td><td>4.2214 ns</td><td>3.9487 ns</td><td>25</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach</td><td>100</td><td>251.602 ns</td><td>4.0919 ns</td><td>3.8276 ns</td><td>26</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach_EnumeratorCache</td><td>100</td><td>500.243 ns</td><td>3.5165 ns</td><td>2.7454 ns</td><td>30</td><td>-</td>
+</tr><tr><td>array_For</td><td>100</td><td>59.575 ns</td><td>0.3429 ns</td><td>0.3040 ns</td><td>19</td><td>-</td>
+</tr><tr><td>array_For_LenCache</td><td>100</td><td>57.369 ns</td><td>0.3606 ns</td><td>0.3373 ns</td><td>18</td><td>-</td>
+</tr><tr><td>array_For_LenCacheGlobal</td><td>100</td><td>57.074 ns</td><td>0.6792 ns</td><td>0.6353 ns</td><td>18</td><td>-</td>
+</tr><tr><td>array_Foreach</td><td>100</td><td>38.979 ns</td><td>0.2857 ns</td><td>0.2532 ns</td><td>14</td><td>-</td>
+</tr><tr><td>array_Foreach_EnumeratorCache</td><td>100</td><td>424.970 ns</td><td>6.0725 ns</td><td>5.6802 ns</td><td>29</td><td>-</td>
+</tr><tr><td>array_NoOpt_UnsafePtrArithmetics</td><td>100</td><td>224.489 ns</td><td>2.1255 ns</td><td>1.8842 ns</td><td>24</td><td>-</td>
+</tr><tr><td>array_UnsafePtrArithmetics</td><td>100</td><td>44.753 ns</td><td>0.3402 ns</td><td>0.2841 ns</td><td>15</td><td>-</td>
+</tr><tr><td>list_NoOpt_For</td><td>10000</td><td>45,229.571 ns</td><td>471.9926 ns</td><td>394.1352 ns</td><td>46</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCache</td><td>10000</td><td>32,427.660 ns</td><td>291.3588 ns</td><td>258.2820 ns</td><td>43</td><td>-</td>
+</tr><tr><td>list_NoOpt_For_LenCacheGlobal</td><td>10000</td><td>34,116.665 ns</td><td>362.8374 ns</td><td>339.3983 ns</td><td>44</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach</td><td>10000</td><td>59,064.809 ns</td><td>325.4560 ns</td><td>288.5083 ns</td><td>48</td><td>-</td>
+</tr><tr><td>list_NoOpt_Foreach_EnumeratorCache</td><td>10000</td><td>110,480.293 ns</td><td>610.4733 ns</td><td>509.7729 ns</td><td>50</td><td>-</td>
+</tr><tr><td>list_For</td><td>10000</td><td>11,415.952 ns</td><td>225.7034 ns</td><td>562.0798 ns</td><td>38</td><td>-</td>
+</tr><tr><td>list_For_LenCache</td><td>10000</td><td>11,464.024 ns</td><td>226.7061 ns</td><td>483.1291 ns</td><td>38</td><td>-</td>
+</tr><tr><td>list_For_LenCacheGlobal</td><td>10000</td><td>11,371.441 ns</td><td>223.5311 ns</td><td>257.4187 ns</td><td>38</td><td>-</td>
+</tr><tr><td>list_Foreach</td><td>10000</td><td>11,840.757 ns</td><td>235.3626 ns</td><td>640.3212 ns</td><td>39</td><td>-</td>
+</tr><tr><td>list_Foreach_EnumeratorCache</td><td>10000</td><td>95,036.414 ns</td><td>803.3855 ns</td><td>712.1803 ns</td><td>49</td><td>-</td>
+</tr><tr><td>array_NoOpt_For</td><td>10000</td><td>27,004.825 ns</td><td>201.7210 ns</td><td>178.8204 ns</td><td>42</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCache</td><td>10000</td><td>25,639.702 ns</td><td>275.0007 ns</td><td>257.2358 ns</td><td>41</td><td>-</td>
+</tr><tr><td>array_NoOpt_For_LenCacheGlobal</td><td>10000</td><td>25,532.264 ns</td><td>217.8014 ns</td><td>181.8740 ns</td><td>41</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach</td><td>10000</td><td>26,657.508 ns</td><td>270.1860 ns</td><td>239.5129 ns</td><td>42</td><td>-</td>
+</tr><tr><td>array_NoOpt_Foreach_EnumeratorCache</td><td>10000</td><td>48,625.634 ns</td><td>967.9225 ns</td><td>1,258.5727 ns</td><td>47</td><td>-</td>
+</tr><tr><td>array_For</td><td>10000</td><td>10,795.397 ns</td><td>203.0100 ns</td><td>470.5067 ns</td><td>37</td><td>-</td>
+</tr><tr><td>array_For_LenCache</td><td>10000</td><td>9,524.573 ns</td><td>182.6768 ns</td><td>412.3319 ns</td><td>36</td><td>-</td>
+</tr><tr><td>array_For_LenCacheGlobal</td><td>10000</td><td>9,433.278 ns</td><td>186.6035 ns</td><td>350.4866 ns</td><td>36</td><td>-</td>
+</tr><tr><td>array_Foreach</td><td>10000</td><td>8,932.611 ns</td><td>174.7829 ns</td><td>315.1696 ns</td><td>35</td><td>-</td>
+</tr><tr><td>array_Foreach_EnumeratorCache</td><td>10000</td><td>42,072.736 ns</td><td>502.7591 ns</td><td>470.2812 ns</td><td>45</td><td>-</td>
+</tr><tr><td>array_NoOpt_UnsafePtrArithmetics</td><td>10000</td><td>24,077.910 ns</td><td>206.4453 ns</td><td>172.3912 ns</td><td>40</td><td>-</td>
+</tr><tr><td>array_UnsafePtrArithmetics</td><td>10000</td><td>8,974.317 ns</td><td>179.4233 ns</td><td>245.5966 ns</td><td>35</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>
