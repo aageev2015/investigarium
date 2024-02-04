@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfFlexDrawings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFlexDrawings"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
+    <DockPanel>
+        <StackPanel x:Name="pHeader" Height="50" Margin="5" DockPanel.Dock="Top" Background="Red" Orientation="Horizontal">
+            <Button x:Name="btnLoadFromFile" Padding ="5" Margin="5" Content="Load from file" AutomationProperties.Name="btnLoad" AutomationProperties.HelpText="Load" Click="btnLoad_Click"/>
+        </StackPanel>
+        <StackPanel x:Name="pContent" Margin="50" Background="Blue" Orientation="Horizontal">
+            <Canvas x:Name="cnvClient" AutomationProperties.Name="cnvDisplay"/>
+        </StackPanel>
+        <StackPanel x:Name="pFotter" Height="50" Margin="5" DockPanel.Dock="Bottom" Background="Green" Orientation="Horizontal">
+            <Button x:Name="btnCaptureFromCamera" Padding ="5" Margin="5" Content="From Camera" AutomationProperties.Name="btnAction2" Click="btnCaptureFromCamera_Click"/>
+        </StackPanel>
+    </DockPanel>
+</Window>
