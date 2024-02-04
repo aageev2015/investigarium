@@ -1,7 +1,4 @@
-﻿// not finished
-// investigate codepage
-
-namespace LearnHistoricalNet7_8Features.Stocks
+﻿namespace LearnHistoricalNet7_8Features.Stocks
 {
 	public class Stock15_gen_case_code
 	{
