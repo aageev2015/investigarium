@@ -1,0 +1,7 @@
+- Interlock vs lock(object). aggregate concurently using
+- 	sleep(1), sleep(0), sleep(5), sleep(20). 
+	Interlock
+	lock
+	semaphore
+- [ThreadStatic] vs Thread.GetNamedDataSlot+Thread.SetData+Thread.GetData
+	https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.setdata?view=net-7.0

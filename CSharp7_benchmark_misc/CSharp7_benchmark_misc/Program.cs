@@ -1,3 +1,3 @@
 ﻿BenchmarkRunner.Run(typeof(
-	bMisc.TestsNormalInvokeVsReflectionInvoke
+    bMisc.Tests_StopwatchVsDateTime
 ));

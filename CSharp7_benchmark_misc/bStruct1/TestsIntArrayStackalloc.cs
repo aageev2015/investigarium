@@ -8,7 +8,7 @@ namespace bStruct1
 	[KeepBenchmarkFiles]
 	[MemoryDiagnoser]
 	[RankColumn]
-	public class Tests
+	public class TestsIntArrayStackalloc
 	{
 		[Params(10, 100, 1000, 10000)]
 		public int Length;
