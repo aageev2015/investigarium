@@ -33,7 +33,7 @@ namespace LearnHistoricalNet7_8Features.Stocks
                     {
                         Console.WriteLine($"create {index}. {Thread.CurrentThread.ManagedThreadId}");
                         cacheEntry.SlidingExpiration = TimeSpan.FromSeconds(10);
-                        return new Lazy(() => new CachedItem(index * 10));
+                        return new CachedItem(index * 10);
                     });
                     results[index] = val;
                     await Console.Out.WriteLineAsync($"Read {val} {index}. {Thread.CurrentThread.ManagedThreadId}");

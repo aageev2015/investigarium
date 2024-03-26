@@ -1,3 +1,3 @@
 ﻿BenchmarkRunner.Run(typeof(
-    bMisc.Tests_StopwatchVsDateTime
+    bMixNetVersions.Tests_GCAllocateArray
 ));

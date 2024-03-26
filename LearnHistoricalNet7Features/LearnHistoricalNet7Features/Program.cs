@@ -1,2 +1,5 @@
-﻿//LearnHistoricalNet7_8Features.Stocks.Stock16_misc.Do();
-LearnHistoricalNet7_8Features.Stocks.Stock21_MemoryCache2.Do();
+﻿using LearnHistoricalNet7_8Features.Stocks;
+
+//LearnHistoricalNet7n8Features.Algorithms.QuickSort.QuickSortTest.Do();
+Stock27_temp.Do();
+
