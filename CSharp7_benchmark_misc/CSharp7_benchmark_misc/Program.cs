@@ -1,3 +1,3 @@
 ﻿BenchmarkRunner.Run(typeof(
-    bMixNetVersions.Tests_GCAllocateArray
+    bMisc.Tests_GetDateTime
 ));

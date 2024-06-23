@@ -1,5 +1,1 @@
-﻿using LearnHistoricalNet7_8Features.Stocks;
-
-//LearnHistoricalNet7n8Features.Algorithms.QuickSort.QuickSortTest.Do();
-Stock27_temp.Do();
-
+﻿LearnHistoricalNet7_8Features.Stocks.Stock39_TwoEnumerators.Do();
