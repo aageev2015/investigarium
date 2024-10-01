@@ -1,0 +1,9 @@
+
+GET {{HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+GET {{HostAddress}}/weatherforecast/recurring
+Accept: application/json
+
+###

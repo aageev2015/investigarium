@@ -1,0 +1,7 @@
+{
+  "name": "HangfireBasicsTests",
+  "dependencies": {
+    "hangfire": "1.8.14",
+    "Microsoft.Data.SqlClient": "5.2.2"
+  }
+}

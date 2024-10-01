@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireBasicsWebAPI", "HangfireBasicsAPI\HangfireBasicsWebAPI.csproj", "{088755DD-1F32-4CE9-B705-4DAA07745A0E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F} = {E50DB66B-609E-47CD-AE8D-2AC546578D3F}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20F6D4E9-5FB4-4E21-B4CE-B6F76308ED8B}"
+	ProjectSection(SolutionItems) = preProject
+		package.json = package.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HangfireBasicsWorkerServer", "HangfireBasicsWorkerServer\HangfireBasicsWorkerServer.csproj", "{898D44DF-C4FC-4E1A-9EE7-F03E81258E1A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E} = {E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F} = {E50DB66B-609E-47CD-AE8D-2AC546578D3F}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{9F3CE6E5-ABCD-430C-A959-4FA44F5C9C9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireBasicsService", "HangfireBasicsService\HangfireBasicsService.csproj", "{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F} = {E50DB66B-609E-47CD-AE8D-2AC546578D3F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HangfireBasicsServiceContract", "HangfireBasicsServiceContract\HangfireBasicsServiceContract.csproj", "{E50DB66B-609E-47CD-AE8D-2AC546578D3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{088755DD-1F32-4CE9-B705-4DAA07745A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088755DD-1F32-4CE9-B705-4DAA07745A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088755DD-1F32-4CE9-B705-4DAA07745A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088755DD-1F32-4CE9-B705-4DAA07745A0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{898D44DF-C4FC-4E1A-9EE7-F03E81258E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{898D44DF-C4FC-4E1A-9EE7-F03E81258E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{898D44DF-C4FC-4E1A-9EE7-F03E81258E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{898D44DF-C4FC-4E1A-9EE7-F03E81258E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E22FE6AE-92C7-4523-B8FE-CC6EE19EF49E} = {9F3CE6E5-ABCD-430C-A959-4FA44F5C9C9A}
+		{E50DB66B-609E-47CD-AE8D-2AC546578D3F} = {9F3CE6E5-ABCD-430C-A959-4FA44F5C9C9A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07218A16-0206-4F14-B0F4-460F27C365FB}
+	EndGlobalSection
+EndGlobal
