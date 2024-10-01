@@ -1,3 +1,3 @@
 ﻿BenchmarkRunner.Run(typeof(
-    bMisc.Tests_GetDateTime
+    bMisc.Tests_BenchMethodMustReturnProof
 ));

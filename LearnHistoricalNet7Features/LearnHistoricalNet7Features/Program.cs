@@ -1,1 +1,1 @@
-﻿LearnHistoricalNet7_8Features.Stocks.Stock39_TwoEnumerators.Do();
+﻿LearnHistoricalNet7_8Features.Stocks.Stock48_DuckTyping.Do();
